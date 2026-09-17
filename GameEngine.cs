@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System;
 using activity_00_tap_26_27.Components;
+using activity_00_tap_26_27.Events;
 
 namespace activity_00_tap_26_27
 {
@@ -17,6 +18,8 @@ namespace activity_00_tap_26_27
 
         private bool _shouldQuit = false;
 
+        EventManager _eventManager = new EventManager();
+
         public void Run()
         {
             _stopwatch.Start();
@@ -30,10 +33,11 @@ namespace activity_00_tap_26_27
                 lag += elapsed_time;
 
                 ProcessInput();
-
+               
                 while (lag >= FIXED_FRAME_TIME)
                 {
                     FixedUpdate(FIXED_FRAME_TIME);
+                    _eventManager.ProcessEvents();
                     lag -= FIXED_FRAME_TIME;
                 }
                
