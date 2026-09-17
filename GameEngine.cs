@@ -18,14 +18,17 @@ namespace activity_00_tap_26_27
 
         private bool _shouldQuit = false;
 
+
         EventManager _eventManager = new EventManager();
+        private LogManager _logManager;
 
         public void Run()
         {
+            _logManager = new LogManager(_eventManager);
             _stopwatch.Start();
             float lag = 0.0f;
             float last_time = GetCurrentTime();
-
+            
             while (!_shouldQuit)
             {
                 float loop_start_time = GetCurrentTime();
