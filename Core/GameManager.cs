@@ -6,6 +6,8 @@ namespace activity_00_tap_26_27.Core
 {
     public class GameManager
     {
+        private LocationComponent _currentLocation;
+
         private EventManager _eventManager;
         private readonly List<GameObject> _gameObjectTable = new List<GameObject>();
 
@@ -13,6 +15,7 @@ namespace activity_00_tap_26_27.Core
 
         public GameManager(EventManager event_manager)
         {
+            _eventManager = event_manager;
             GameObject world = new GameObject("world");
             GameObject daisyTown = new GameObject("daisy Town");
 
@@ -26,6 +29,8 @@ namespace activity_00_tap_26_27.Core
 
             world.SetIsActive(true);
             daisyTown.SetIsActive(true);
+
+            _currentLocation = worldLocation;
     
             GameObject gameObjectTest = new GameObject("test");
             RegisterGameObjectGameEvent registerEvent = new RegisterGameObjectGameEvent(gameObjectTest);

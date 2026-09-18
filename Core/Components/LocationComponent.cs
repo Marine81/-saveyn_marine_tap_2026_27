@@ -17,12 +17,12 @@ namespace activity_00_tap_26_27.Core.Components
             _destinations = new List<Connection>();
         }
 
-        public int GetConnexionCount() //compteur
+        public int GetConnectionCount() //compteur
         {
             return _destinations.Count;
         }
 
-        public Connection GetConnectiion(int index) //acces avec index
+        public Connection GetConnection(int index) //acces avec index
         {
             if (index <0 || index >= _destinations.Count)
             {
@@ -38,7 +38,7 @@ namespace activity_00_tap_26_27.Core.Components
             other_location._destinations.Add(new Connection(this,distance)); //ajout du lieu liste voisin
         }
 
-        public String SetLocationName()
+        public String GetLocationName()
         {
             return _locationName;
         }

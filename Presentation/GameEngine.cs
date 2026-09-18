@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System;
-using activity_00_tap_26_27.Components;
 using activity_00_tap_26_27.Core;
 using activity_00_tap_26_27.Core.Events;
+using activity_00_tap_26_27.Core.Components;
 
 namespace activity_00_tap_26_27.Presentation
 {
@@ -82,6 +81,16 @@ namespace activity_00_tap_26_27.Presentation
         private void Render()
         {
             _renderManager.Draw(0,0, "Game in progress...\n", ConsoleColor.Magenta);
+            LocationComponent current_location = _gameManager.GetCurrentLocation();
+            _renderManager.Draw(0, 1, $"Exploring {current_location.GetLocationName()}\n", ConsoleColor.Cyan);
+
+            for(int index = 0; index< current_location.GetConnectionCount(); index++)
+            {
+                Connection connection = current_location.GetConnection(index);
+                LocationComponent destination = connection.GetDestination(); 
+               
+                _renderManager.Draw(0, 2 + index, $"{index + 1}. {destination.GetLocationName()} : Distance : {connection.GetDistance()} ", ConsoleColor.Green);
+            }  
             _renderManager.Render();
         }
 
