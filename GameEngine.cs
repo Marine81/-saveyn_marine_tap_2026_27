@@ -28,7 +28,12 @@ namespace activity_00_tap_26_27
             _stopwatch.Start();
             float lag = 0.0f;
             float last_time = GetCurrentTime();
-            
+
+            GameObject gameObjectTest = new GameObject("test");
+            RegisterGameObjectGameEvent registerEvent = new RegisterGameObjectGameEvent(gameObjectTest);
+            _eventManager.TriggerDelayedEvent(registerEvent);
+            //creation gameobject test
+
             while (!_shouldQuit)
             {
                 float loop_start_time = GetCurrentTime();
@@ -40,13 +45,14 @@ namespace activity_00_tap_26_27
                 while (lag >= FIXED_FRAME_TIME)
                 {
                     FixedUpdate(FIXED_FRAME_TIME);
-                    _eventManager.ProcessEvents();
                     lag -= FIXED_FRAME_TIME;
                 }
                
                 Update(elapsed_time);
 
                 Render();
+
+                _eventManager.ProcessEvents();
 
                 last_time = loop_start_time;
             }
