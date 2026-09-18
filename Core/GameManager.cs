@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using activity_00_tap_26_27.Core.Components;
 using activity_00_tap_26_27.Core.Events;
 
 namespace activity_00_tap_26_27.Core
@@ -16,8 +13,17 @@ namespace activity_00_tap_26_27.Core
 
         public GameManager(EventManager event_manager)
         {
-            _eventManager = event_manager;
+            GameObject world = new GameObject("world");
+            GameObject daisyTown = new GameObject("daisy Town");
 
+            LocationComponent worldLocation = new LocationComponent("world");
+            world.AddComponent(worldLocation);
+
+            LocationComponent daisyLocation = new LocationComponent("Daisy town");
+            daisyTown.AddComponent(worldLocation);
+
+            worldLocation.ConnectTo(daisyLocation,10);
+    
             GameObject gameObjectTest = new GameObject("test");
             RegisterGameObjectGameEvent registerEvent = new RegisterGameObjectGameEvent(gameObjectTest);
             _eventManager.TriggerDelayedEvent(registerEvent);
