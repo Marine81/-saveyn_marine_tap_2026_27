@@ -23,6 +23,9 @@ namespace activity_00_tap_26_27.Core
             daisyTown.AddComponent(worldLocation);
 
             worldLocation.ConnectTo(daisyLocation,10);
+
+            world.SetIsActive(true);
+            daisyTown.SetIsActive(true);
     
             GameObject gameObjectTest = new GameObject("test");
             RegisterGameObjectGameEvent registerEvent = new RegisterGameObjectGameEvent(gameObjectTest);
