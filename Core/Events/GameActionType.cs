@@ -4,10 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace activity_00_tap_26_27.Events
+namespace activity_00_tap_26_27.Core.Events
 {
     public enum GameActionType
     {
-        ESCAPE
+        ESCAPE,
+        NAVIGATE_UP,
+        NAVIGATE_DOWN,
+        CONFIRM,
+        CANCEL
     }
 }
