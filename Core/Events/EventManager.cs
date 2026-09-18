@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System;
 
-namespace activity_00_tap_26_27.Events
+namespace activity_00_tap_26_27.Core.Events
 {
     public class EventManager
     {

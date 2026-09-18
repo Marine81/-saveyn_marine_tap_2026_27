@@ -1,4 +1,4 @@
-﻿namespace activity_00_tap_26_27.States
+﻿namespace activity_00_tap_26_27.Core.States
 {
     public class StateMachine
     {

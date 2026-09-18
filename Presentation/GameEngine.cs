@@ -3,8 +3,9 @@ using System.Diagnostics;
 using System;
 using activity_00_tap_26_27.Components;
 using activity_00_tap_26_27.Events;
+using activity_00_tap_26_27.Core;
 
-namespace activity_00_tap_26_27
+namespace activity_00_tap_26_27.Presentation
 {
     public class GameEngine
     {
@@ -12,29 +13,22 @@ namespace activity_00_tap_26_27
 
         private readonly Stopwatch _stopwatch = new Stopwatch();
 
-        private readonly List<GameObject> _gameObjectTable = new List<GameObject>();
-
         private readonly ConsoleRenderManager _renderManager = new ConsoleRenderManager();
 
-        private bool _shouldQuit = false;
+        private EventManager _eventManager = new EventManager();
+        private GameManager _gameManager;
 
-
-        EventManager _eventManager = new EventManager();
         private LogManager _logManager;
 
         public void Run()
         {
             _logManager = new LogManager(_eventManager);
+            _gameManager = new GameManager(_eventManager);
             _stopwatch.Start();
             float lag = 0.0f;
             float last_time = GetCurrentTime();
 
-            GameObject gameObjectTest = new GameObject("test");
-            RegisterGameObjectGameEvent registerEvent = new RegisterGameObjectGameEvent(gameObjectTest);
-            _eventManager.TriggerDelayedEvent(registerEvent);
-            //creation gameobject test
-
-            while (!_shouldQuit)
+            while (!_gameManager.GetShouldQuit())
             {
                 float loop_start_time = GetCurrentTime();
                 float elapsed_time = loop_start_time - last_time;
@@ -44,11 +38,11 @@ namespace activity_00_tap_26_27
                
                 while (lag >= FIXED_FRAME_TIME)
                 {
-                    FixedUpdate(FIXED_FRAME_TIME);
+                    _gameManager.FixedUpdate(FIXED_FRAME_TIME);
                     lag -= FIXED_FRAME_TIME;
                 }
                
-                Update(elapsed_time);
+                _gameManager.Update(elapsed_time);
 
                 Render();
 
@@ -60,44 +54,30 @@ namespace activity_00_tap_26_27
             Console.WriteLine("Goodbye!");
         }
 
+        private void SendTranslatedKey(ConsoleKey console_key, EventManager event_manager)
+        {
+           switch (console_key)
+            {
+                case ConsoleKey.Escape:
+                {
+                    event_manager.TriggerEvent(new GameActionGameEvent(GameActionType.ESCAPE));
+                        break;
+                }
+            }
+        }
+
         private void ProcessInput()
         {
             while (Console.KeyAvailable)
             {
                 ConsoleKeyInfo player_command = Console.ReadKey(true);
 
-                if (player_command.Key == ConsoleKey.Escape)
-                {
-                    _shouldQuit = true;
-                }
+                SendTranslatedKey(player_command.Key, _eventManager);
+
             }
         }
-
-        private void FixedUpdate(float fixed_elapsed_time)
-        {
-            for (int object_index = 0; object_index < _gameObjectTable.Count; object_index++)
-            {
-                GameObject game_object = _gameObjectTable[object_index];
-
-                if (game_object.GetIsActive())
-                {
-                    game_object.FixedUpdate(fixed_elapsed_time);
-                }
-            }
-        }
-
-        private void Update(float elapsed_time)
-        {
-            for (int object_index = 0; object_index < _gameObjectTable.Count; object_index++)
-            {
-                GameObject game_object = _gameObjectTable[object_index];
-
-                if (game_object.GetIsActive())
-                {
-                    game_object.Update(elapsed_time);
-                }
-            }
-        }
+       
+                    
 
         private void Render()
         {
