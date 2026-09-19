@@ -13,6 +13,8 @@ namespace activity_00_tap_26_27.Core
 
         private bool _shouldQuit = false;
 
+        private int _indexSelection = -1; // pour changer la selection
+
         public GameManager(EventManager event_manager)
         {
             _eventManager = event_manager;
@@ -51,6 +53,60 @@ namespace activity_00_tap_26_27.Core
         public LocationComponent GetCurrentLocation()
         {
             return _currentLocation;
+        }
+
+        public int GetSelectionIndex()
+        {
+            return _indexSelection;
+        }
+
+        private void Navigation(GameActionType action) // le param contient l'action du joueur
+        {
+            int maxIndex = _currentLocation.GetConnectionCount() - 1;
+
+            if(action == GameActionType.NAVIGATE_DOWN)
+            {
+                if(_indexSelection == -1) // verifie si la selection est a -1 (encore aucune destination selectione)
+                {
+                    _indexSelection = 0; // met sur la premiere destination de la liste
+                }
+                else if(_indexSelection < maxIndex) 
+                {
+                    _indexSelection++; //descend sans depasser la liste puisqu'on est pas tout en dessous
+                }
+            }
+
+            else if (action == GameActionType.NAVIGATE_UP)
+            {
+                if (_indexSelection == -1)
+                {
+                    _indexSelection = 0; 
+                }
+                else if (_indexSelection > 0)// quand un index est deja selectione
+                {
+                    _indexSelection--; // monte sans depasser la liste
+                }
+            }
+            else if( action == GameActionType.CANCEL)
+            {
+                _indexSelection = -1; // annule selection et revient etat aucune destination selectione
+            }
+
+            else if (action == GameActionType.CONFIRM) //entre dans le monde selectione
+            {
+               if(_indexSelection != -1)//verifie si on selectione quelque chose
+                {
+                    Connection chosenConection = _currentLocation.GetConnection(_indexSelection);
+
+                    _currentLocation= chosenConection.GetDestination();// entre dans la destination
+                    _indexSelection = -1; // reinitialise l'index
+                }
+            }
+
+            else if ( action == GameActionType.ESCAPE)
+            {
+                _shouldQuit = true;
+            }
         }
 
         public void FixedUpdate(float fixed_elapsed_time)

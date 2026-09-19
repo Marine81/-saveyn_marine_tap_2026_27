@@ -62,7 +62,25 @@ namespace activity_00_tap_26_27.Presentation
                     event_manager.TriggerEvent(new GameActionGameEvent(GameActionType.ESCAPE));
                         break;
                 }
+                    case ConsoleKey.DownArrow:
+                    {
+
+                        break;
+                    }
+
+                    case ConsoleKey.UpArrow:
+                    {
+                        break;
+                    }
+
+                    case ConsoleKey.Enter:
+                    {
+                        break;
+                    }
+
+                    
             }
+            
         }
 
         private void ProcessInput()
@@ -72,7 +90,6 @@ namespace activity_00_tap_26_27.Presentation
                 ConsoleKeyInfo player_command = Console.ReadKey(true);
 
                 SendTranslatedKey(player_command.Key, _eventManager);
-
             }
         }
        
@@ -80,16 +97,24 @@ namespace activity_00_tap_26_27.Presentation
 
         private void Render()
         {
-            _renderManager.Draw(0,0, "Game in progress...\n", ConsoleColor.Magenta);
+            int selected_index = _gameManager.GetSelectionIndex();
+
+            _renderManager.Draw(0,0, "Game in progress...\n", ConsoleColor.Magenta, ConsoleColor.Black);
             LocationComponent current_location = _gameManager.GetCurrentLocation();
-            _renderManager.Draw(0, 1, $"Exploring {current_location.GetLocationName()}\n", ConsoleColor.Cyan);
+            _renderManager.Draw(0, 1, $"Exploring {current_location.GetLocationName()}\n", ConsoleColor.Cyan, ConsoleColor.Black);
 
             for(int index = 0; index< current_location.GetConnectionCount(); index++)
             {
                 Connection connection = current_location.GetConnection(index);
                 LocationComponent destination = connection.GetDestination(); 
                
-                _renderManager.Draw(0, 2 + index, $"{index + 1}. {destination.GetLocationName()} : Distance : {connection.GetDistance()} ", ConsoleColor.Green);
+                ConsoleColor text_color = ConsoleColor.White;
+                ConsoleColor background_color = ConsoleColor.Black;
+                if(index == selected_index)
+                {
+
+                }
+                _renderManager.Draw(0, 2 + index, $"{index + 1}. {destination.GetLocationName()} : Distance : {connection.GetDistance()} ", text_color, background_color);
             }  
             _renderManager.Render();
         }
