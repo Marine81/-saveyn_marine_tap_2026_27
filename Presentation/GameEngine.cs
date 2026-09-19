@@ -116,8 +116,17 @@ namespace activity_00_tap_26_27.Presentation
                     background_color = ConsoleColor.DarkGreen;
                 }
                 _renderManager.Draw(0, 2 + index, $"{index + 1}. {destination.GetLocationName()} : Distance : {connection.GetDistance()} ", text_color, background_color);
-            }  
+            }
+
+            MessageComponent message = current_location.GetOwner().GetComponent<MessageComponent>(); // regarde si il y a component message
+
+            if(message != null) //verifie si il possede message
+            {
+                _renderManager.Draw(0 ,5, $"[PANNEAU] : {message.GetMessage()}", ConsoleColor.Yellow, ConsoleColor.Black);
+            }
+
             _renderManager.Render();
+
         }
 
         private float GetCurrentTime()

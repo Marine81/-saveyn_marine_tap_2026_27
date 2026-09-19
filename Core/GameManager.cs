@@ -19,17 +19,29 @@ namespace activity_00_tap_26_27.Core
         {
             _eventManager = event_manager;
             _eventManager.RegisterToEvent<GameActionGameEvent>(Navigation);
+            
             GameObject world = new GameObject("world");
-            GameObject daisyTown = new GameObject("daisy Town");
-            GameObject silverMine = new GameObject("silver Mine Dungeon");
-
             LocationComponent worldLocation = new LocationComponent("world");
+            worldLocation.SetOwner(world);
             world.AddComponent(worldLocation);
 
+            GameObject daisyTown = new GameObject("daisy Town");
             LocationComponent daisyLocation = new LocationComponent("Daisy town");
+            daisyLocation.SetOwner(daisyTown);
             daisyTown.AddComponent(worldLocation);
+
+            GameObject silverMine = new GameObject("silver Mine Dungeon");
             LocationComponent silverMineLocation = new LocationComponent("Silver Mine Dungeon");
+            silverMineLocation.SetOwner(silverMine);
             silverMine.AddComponent(worldLocation);
+
+            MessageComponent message_component = new MessageComponent("Welcome to daisy town !");
+            message_component.SetOwner(daisyTown);
+            daisyTown.AddComponent(message_component);
+
+            MessageComponent messageComponent2 = new MessageComponent("Welcome to the mine");
+            messageComponent2.SetOwner(silverMine);
+            silverMine.AddComponent(messageComponent2);
 
             worldLocation.ConnectTo(daisyLocation,10);
             worldLocation.ConnectTo(silverMineLocation,15);
@@ -39,11 +51,13 @@ namespace activity_00_tap_26_27.Core
             silverMine.SetIsActive(true);
 
             _currentLocation = worldLocation;
-    
+
+
+            //creation gameobject test
             GameObject gameObjectTest = new GameObject("test");
             RegisterGameObjectGameEvent registerEvent = new RegisterGameObjectGameEvent(gameObjectTest);
             _eventManager.TriggerDelayedEvent(registerEvent);
-            //creation gameobject test
+           
         }
 
         public bool GetShouldQuit()

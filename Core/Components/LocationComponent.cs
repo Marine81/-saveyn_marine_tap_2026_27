@@ -9,6 +9,10 @@ namespace activity_00_tap_26_27.Core.Components
 {
     public class LocationComponent : Component
     {
+        private MessageComponent _messageComponent;
+
+        private GameObject _owner; // va lier les component
+
         private string _locationName;
         private List<Connection> _destinations;
         public LocationComponent(string location_name) 
@@ -43,6 +47,24 @@ namespace activity_00_tap_26_27.Core.Components
             return _locationName;
         }
 
+        public void SetMessage(MessageComponent message)
+        {
+            _messageComponent = message;
+        }
 
+        public MessageComponent GetMessage()
+        {
+            return _messageComponent;
+        }
+
+        public void SetOwner(GameObject Owner)
+        {
+            _owner = Owner;
+        }
+
+        public GameObject GetOwner()
+        {
+            return _owner;
+        }
     }
 }
