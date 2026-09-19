@@ -8,7 +8,7 @@ namespace activity_00_tap_26_27.Core.Events
         private readonly Dictionary<Type, List<Action<IGameEvent>>> _eventTypeTable = new Dictionary<Type, List<Action<IGameEvent>>>();
         private Queue<IGameEvent> _eventQueue = new Queue<IGameEvent>();
 
-        public void RegisterToEvent<TYPE>(Action<IGameEvent> action) where TYPE : IGameEvent
+        public void RegisterToEvent<TYPE>(Action<IGameEvent> action) where TYPE : IGameEvent //ecoute les touches du clavier
         {
             Type event_type = typeof(TYPE);
 
@@ -20,7 +20,7 @@ namespace activity_00_tap_26_27.Core.Events
             _eventTypeTable[event_type].Add(action);
         }
 
-        public void UnregisterFromEvent<TYPE>(Action<IGameEvent> action) where TYPE : IGameEvent
+        public void UnregisterFromEvent<TYPE>(Action<IGameEvent> action) where TYPE : IGameEvent //Se desabonne quand objet est detruit
         {
             Type event_type = typeof(TYPE);
 
@@ -30,14 +30,13 @@ namespace activity_00_tap_26_27.Core.Events
             }
         }
 
-        public void TriggerDelayedEvent(IGameEvent game_event)
+        public void TriggerDelayedEvent(IGameEvent game_event) //prend l'evenement et le place dans file d'attente
         {
             _eventQueue.Enqueue(game_event);
         }
 
-        public void TriggerEvent(IGameEvent game_event)
+        public void TriggerEvent(IGameEvent game_event)// execute les action immediatement en prevenant tous ceux abonne
         {
-            
             Type event_type = game_event.GetType();
 
             if (_eventTypeTable.ContainsKey(event_type))
@@ -50,7 +49,7 @@ namespace activity_00_tap_26_27.Core.Events
             }
         }
 
-        public void ProcessEvents()
+        public void ProcessEvents() //declenche les evenement de la file d'attente
         {
             while (_eventQueue.Count > 0)
             {

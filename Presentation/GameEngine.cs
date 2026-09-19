@@ -40,12 +40,10 @@ namespace activity_00_tap_26_27.Presentation
                     _gameManager.FixedUpdate(FIXED_FRAME_TIME);
                     lag -= FIXED_FRAME_TIME;
                 }
-               
+                _eventManager.ProcessEvents();
                 _gameManager.Update(elapsed_time);
 
                 Render();
-
-                _eventManager.ProcessEvents();
 
                 last_time = loop_start_time;
             }
@@ -64,17 +62,20 @@ namespace activity_00_tap_26_27.Presentation
                 }
                     case ConsoleKey.DownArrow:
                     {
-
+                        event_manager.TriggerEvent(new GameActionGameEvent(GameActionType.NAVIGATE_DOWN));
                         break;
                     }
 
                     case ConsoleKey.UpArrow:
                     {
+                        event_manager.TriggerEvent(new GameActionGameEvent(GameActionType.NAVIGATE_UP));
                         break;
                     }
 
                     case ConsoleKey.Enter:
                     {
+                        event_manager.TriggerEvent(new GameActionGameEvent(GameActionType.CONFIRM));
+
                         break;
                     }
 
@@ -89,7 +90,7 @@ namespace activity_00_tap_26_27.Presentation
             {
                 ConsoleKeyInfo player_command = Console.ReadKey(true);
 
-                SendTranslatedKey(player_command.Key, _eventManager);
+                SendTranslatedKey(player_command.Key,_eventManager);
             }
         }
        
@@ -112,7 +113,7 @@ namespace activity_00_tap_26_27.Presentation
                 ConsoleColor background_color = ConsoleColor.Black;
                 if(index == selected_index)
                 {
-
+                    background_color = ConsoleColor.DarkGreen;
                 }
                 _renderManager.Draw(0, 2 + index, $"{index + 1}. {destination.GetLocationName()} : Distance : {connection.GetDistance()} ", text_color, background_color);
             }  

@@ -18,6 +18,7 @@ namespace activity_00_tap_26_27.Core
         public GameManager(EventManager event_manager)
         {
             _eventManager = event_manager;
+            _eventManager.RegisterToEvent<GameActionGameEvent>(Navigation);
             GameObject world = new GameObject("world");
             GameObject daisyTown = new GameObject("daisy Town");
             GameObject silverMine = new GameObject("silver Mine Dungeon");
@@ -60,8 +61,10 @@ namespace activity_00_tap_26_27.Core
             return _indexSelection;
         }
 
-        private void Navigation(GameActionType action) // le param contient l'action du joueur
+        private void Navigation(IGameEvent base_event)// le param contient l'action du joueur
         {
+            GameActionGameEvent game_event = (GameActionGameEvent)base_event;
+            GameActionType action = game_event.GetActionType();// demander explication
             int maxIndex = _currentLocation.GetConnectionCount() - 1;
 
             if(action == GameActionType.NAVIGATE_DOWN)
