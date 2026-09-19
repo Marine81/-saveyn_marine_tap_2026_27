@@ -18,12 +18,12 @@ namespace activity_00_tap_26_27.Core.States
         }
         public void Enter()
         {
-            _gameManager.GetEventManager().RegisterToEvent<GameActionGameEvent>(HandleAction);
+            
         }
 
         public void Exit()
         {
-            _gameManager.GetEventManager().UnregisterFromEvent<GameActionGameEvent>(HandleAction);
+            
         }
 
         public void FixedUpdate(float fixed_elapsed_time)
@@ -42,20 +42,25 @@ namespace activity_00_tap_26_27.Core.States
 
             if (action == GameActionType.NAVIGATE_DOWN)
             {
-                if (current_index < maxConnections - 1) // verifie si la selection est a -1 (encore aucune destination selectione)
+                if (current_index == - 1) // verifie si la selection est a -1 (encore aucune destination selectione)
                 {
-                    _gameManager.SetSelectionIndex(current_index + 1); // met sur la premiere destination de la liste
+                    _gameManager.SetSelectionIndex(0); // met sur la premiere destination de la liste
+                }
+
+                else if(current_index <maxConnections -1)
+                {
+                    _gameManager.SetSelectionIndex(current_index + 1);
                 }
             }
             else if (action == GameActionType.NAVIGATE_UP)
             {
-                if (current_index > 0)
+                if (current_index > 0) //si index est selectione on remonte
                 {
                     _gameManager.SetSelectionIndex(current_index - 1);
                 }
             }
 
-            else if (action == GameActionType.CONFIRM)// quand un index est deja selectione
+            else if (action == GameActionType.CONFIRM)
             {
                 if (current_index != -1 && current_index < maxConnections) //si index valid selectione
                 {
@@ -64,7 +69,7 @@ namespace activity_00_tap_26_27.Core.States
                     LocationComponent new_location = chosenConnection.GetDestination();
 
                     _gameManager.SetCurrentLocation(new_location);
-                    _gameManager.SetSelectionIndex(0);
+                    _gameManager.SetSelectionIndex(-1);
 
                 }
             }

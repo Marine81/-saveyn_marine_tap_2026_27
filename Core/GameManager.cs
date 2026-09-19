@@ -14,13 +14,14 @@ namespace activity_00_tap_26_27.Core
 
         private bool _shouldQuit = false;
 
-        private int _indexSelection = -1; // pour changer la selection
+        private int _selectIndex = -1; // pour changer la selection
 
         private IState _currentState;
 
         public GameManager(EventManager event_manager)
         {
             _eventManager = event_manager;
+            _eventManager.RegisterToEvent<GameActionGameEvent>(Navigation);
             
             GameObject world = new GameObject("world");
             LocationComponent worldLocation = new LocationComponent("world");
@@ -65,6 +66,14 @@ namespace activity_00_tap_26_27.Core
            
         }
 
+        public void Navigation(IGameEvent base_event)
+        {
+            if(_currentState != null)
+            {
+                _currentState.HandleAction(base_event); // va a l'etat actif
+            }
+        }
+
         public bool GetShouldQuit()
         {
            return _shouldQuit;
@@ -82,7 +91,12 @@ namespace activity_00_tap_26_27.Core
 
         public int GetSelectionIndex()
         {
-            return _indexSelection;
+            return _selectIndex;
+        }
+
+        public void SetSelectionIndex(int new_inddex)
+        {
+            _selectIndex = new_inddex;
         }
 
 
@@ -137,11 +151,6 @@ namespace activity_00_tap_26_27.Core
         public IState GetCurrentState()
         {
             return _currentState;
-        }
-
-        public void SetSelectionIndex(int new_index)
-        {
-            _indexSelection = new_index;
         }
     }
 }

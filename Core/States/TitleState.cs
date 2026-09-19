@@ -20,12 +20,12 @@ namespace activity_00_tap_26_27.Core.States
 
         public void Enter()
         {
-            _gameManager.GetEventManager().RegisterToEvent<GameActionGameEvent>(HandleInput);
+            
         }
 
         public void Exit()
         {
-            _gameManager.GetEventManager().UnregisterFromEvent<GameActionGameEvent>(HandleInput);
+            
         }
 
         public void FixedUpdate(float fixed_elapsed_time)
@@ -33,13 +33,15 @@ namespace activity_00_tap_26_27.Core.States
             throw new NotImplementedException();
         }
 
-        public void HandleInput(IGameEvent base_event)
+
+        public void HandleAction(IGameEvent base_event)
         {
             GameActionGameEvent game_event = (GameActionGameEvent)base_event;
             GameActionType action = game_event.GetActionType();
 
             if (action == GameActionType.CONFIRM)
             {
+                _gameManager.SetSelectionIndex(-1);
                 _gameManager.ChangeState(new ExplorationState(_gameManager));//quitte ecran titre pour aller dans jeu
             }
 

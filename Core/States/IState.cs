@@ -1,4 +1,6 @@
-﻿namespace activity_00_tap_26_27.Core.States
+﻿using activity_00_tap_26_27.Core.Events;
+
+namespace activity_00_tap_26_27.Core.States
 {
     public interface IState
     {
@@ -6,5 +8,7 @@
         void Update(float elapsed_time);
         void FixedUpdate(float fixed_elapsed_time);
         void Exit();
+
+        void HandleAction(IGameEvent base_event);
     }
 }

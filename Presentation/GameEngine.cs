@@ -103,10 +103,11 @@ namespace activity_00_tap_26_27.Presentation
 
             int selected_index = _gameManager.GetSelectionIndex();
 
+           
             if (current_state is TitleState)
             {
-                _renderManager.Draw(0,5, "Game", ConsoleColor.Yellow, ConsoleColor.Black);
-                _renderManager.Draw(0, 6, "Enter to play", ConsoleColor.Yellow, ConsoleColor.Black);
+                _renderManager.Draw(0, 0, "Game", ConsoleColor.Yellow, ConsoleColor.Black);
+                _renderManager.Draw(0, 1, "Enter to play", ConsoleColor.Yellow, ConsoleColor.Black);
             }
             else if(current_state is ExplorationState)
             {
@@ -114,13 +115,14 @@ namespace activity_00_tap_26_27.Presentation
                 LocationComponent current_location = _gameManager.GetCurrentLocation();
                 _renderManager.Draw(0, 1, $"Exploring {current_location.GetLocationName()}\n", ConsoleColor.Cyan, ConsoleColor.Black);
 
-                for (int index = 0; index < current_location.GetConnectionCount(); index++)
+                for (int index = 0; index < current_location.GetConnectionCount(); index++) //fait en sorte que ca s'affiche en vert
                 {
                     Connection connection = current_location.GetConnection(index);
                     LocationComponent destination = connection.GetDestination();
 
                     ConsoleColor text_color = ConsoleColor.White;
                     ConsoleColor background_color = ConsoleColor.Black;
+
                     if (index == selected_index)
                     {
                         background_color = ConsoleColor.DarkGreen;
