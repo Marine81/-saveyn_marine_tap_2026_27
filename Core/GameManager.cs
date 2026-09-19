@@ -18,17 +18,22 @@ namespace activity_00_tap_26_27.Core
             _eventManager = event_manager;
             GameObject world = new GameObject("world");
             GameObject daisyTown = new GameObject("daisy Town");
+            GameObject silverMine = new GameObject("silver Mine Dungeon");
 
             LocationComponent worldLocation = new LocationComponent("world");
             world.AddComponent(worldLocation);
 
             LocationComponent daisyLocation = new LocationComponent("Daisy town");
             daisyTown.AddComponent(worldLocation);
+            LocationComponent silverMineLocation = new LocationComponent("Silver Mine Dungeon");
+            silverMine.AddComponent(worldLocation);
 
             worldLocation.ConnectTo(daisyLocation,10);
+            worldLocation.ConnectTo(silverMineLocation,15);
 
             world.SetIsActive(true);
             daisyTown.SetIsActive(true);
+            silverMine.SetIsActive(true);
 
             _currentLocation = worldLocation;
     
@@ -41,6 +46,11 @@ namespace activity_00_tap_26_27.Core
         public bool GetShouldQuit()
         {
            return _shouldQuit;
+        }
+
+        public LocationComponent GetCurrentLocation()
+        {
+            return _currentLocation;
         }
 
         public void FixedUpdate(float fixed_elapsed_time)

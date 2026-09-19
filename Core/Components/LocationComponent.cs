@@ -42,5 +42,7 @@ namespace activity_00_tap_26_27.Core.Components
         {
             return _locationName;
         }
+
+
     }
 }
