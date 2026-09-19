@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using activity_00_tap_26_27.Core.Components;
 using activity_00_tap_26_27.Core.Events;
+using activity_00_tap_26_27.Core.States;
 
 namespace activity_00_tap_26_27.Core
 {
@@ -15,10 +16,11 @@ namespace activity_00_tap_26_27.Core
 
         private int _indexSelection = -1; // pour changer la selection
 
+        private IState _currentState;
+
         public GameManager(EventManager event_manager)
         {
             _eventManager = event_manager;
-            _eventManager.RegisterToEvent<GameActionGameEvent>(Navigation);
             
             GameObject world = new GameObject("world");
             LocationComponent worldLocation = new LocationComponent("world");
@@ -52,6 +54,9 @@ namespace activity_00_tap_26_27.Core
 
             _currentLocation = worldLocation;
 
+            //definit etat depart puis entre dedans
+            _currentState = new TitleState(this);
+            _currentState.Enter();
 
             //creation gameobject test
             GameObject gameObjectTest = new GameObject("test");
@@ -65,6 +70,11 @@ namespace activity_00_tap_26_27.Core
            return _shouldQuit;
         }
 
+        public void SetShouldQuit(bool shouldQuit)
+        {
+            _shouldQuit = shouldQuit;
+        }
+
         public LocationComponent GetCurrentLocation()
         {
             return _currentLocation;
@@ -75,55 +85,10 @@ namespace activity_00_tap_26_27.Core
             return _indexSelection;
         }
 
-        private void Navigation(IGameEvent base_event)// le param contient l'action du joueur
+
+        public void SetCurrentLocation(LocationComponent location_component)
         {
-            GameActionGameEvent game_event = (GameActionGameEvent)base_event;
-            GameActionType action = game_event.GetActionType();// demander explication
-            int maxIndex = _currentLocation.GetConnectionCount() - 1;
-
-            if(action == GameActionType.NAVIGATE_DOWN)
-            {
-                if(_indexSelection == -1) // verifie si la selection est a -1 (encore aucune destination selectione)
-                {
-                    _indexSelection = 0; // met sur la premiere destination de la liste
-                }
-                else if(_indexSelection < maxIndex) 
-                {
-                    _indexSelection++; //descend sans depasser la liste puisqu'on est pas tout en dessous
-                }
-            }
-
-            else if (action == GameActionType.NAVIGATE_UP)
-            {
-                if (_indexSelection == -1)
-                {
-                    _indexSelection = 0; 
-                }
-                else if (_indexSelection > 0)// quand un index est deja selectione
-                {
-                    _indexSelection--; // monte sans depasser la liste
-                }
-            }
-            else if( action == GameActionType.CANCEL)
-            {
-                _indexSelection = -1; // annule selection et revient etat aucune destination selectione
-            }
-
-            else if (action == GameActionType.CONFIRM) //entre dans le monde selectione
-            {
-               if(_indexSelection != -1)//verifie si on selectione quelque chose
-                {
-                    Connection chosenConection = _currentLocation.GetConnection(_indexSelection);
-
-                    _currentLocation= chosenConection.GetDestination();// entre dans la destination
-                    _indexSelection = -1; // reinitialise l'index
-                }
-            }
-
-            else if ( action == GameActionType.ESCAPE)
-            {
-                _shouldQuit = true;
-            }
+            _currentLocation = location_component;
         }
 
         public void FixedUpdate(float fixed_elapsed_time)
@@ -150,6 +115,33 @@ namespace activity_00_tap_26_27.Core
                     game_object.Update(elapsed_time);
                 }
             }
+        }
+
+        public void ChangeState(IState newState)
+        {
+            if(_currentState != null)//Si deja un etat
+            {
+                _currentState.Exit();
+            }
+
+            _currentState = newState;//change etat
+
+            _currentState.Enter();
+        }
+
+        public EventManager GetEventManager()
+        {
+            return _eventManager;
+        }
+
+        public IState GetCurrentState()
+        {
+            return _currentState;
+        }
+
+        public void SetSelectionIndex(int new_index)
+        {
+            _indexSelection = new_index;
         }
     }
 }

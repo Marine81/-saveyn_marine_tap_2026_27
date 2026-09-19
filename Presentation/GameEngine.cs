@@ -3,6 +3,7 @@ using System;
 using activity_00_tap_26_27.Core;
 using activity_00_tap_26_27.Core.Events;
 using activity_00_tap_26_27.Core.Components;
+using activity_00_tap_26_27.Core.States;
 
 namespace activity_00_tap_26_27.Presentation
 {
@@ -98,35 +99,44 @@ namespace activity_00_tap_26_27.Presentation
 
         private void Render()
         {
+            IState current_state = _gameManager.GetCurrentState();
+
             int selected_index = _gameManager.GetSelectionIndex();
 
-            _renderManager.Draw(0,0, "Game in progress...\n", ConsoleColor.Magenta, ConsoleColor.Black);
-            LocationComponent current_location = _gameManager.GetCurrentLocation();
-            _renderManager.Draw(0, 1, $"Exploring {current_location.GetLocationName()}\n", ConsoleColor.Cyan, ConsoleColor.Black);
-
-            for(int index = 0; index< current_location.GetConnectionCount(); index++)
+            if (current_state is TitleState)
             {
-                Connection connection = current_location.GetConnection(index);
-                LocationComponent destination = connection.GetDestination(); 
-               
-                ConsoleColor text_color = ConsoleColor.White;
-                ConsoleColor background_color = ConsoleColor.Black;
-                if(index == selected_index)
-                {
-                    background_color = ConsoleColor.DarkGreen;
-                }
-                _renderManager.Draw(0, 2 + index, $"{index + 1}. {destination.GetLocationName()} : Distance : {connection.GetDistance()} ", text_color, background_color);
+                _renderManager.Draw(0,5, "Game", ConsoleColor.Yellow, ConsoleColor.Black);
+                _renderManager.Draw(0, 6, "Enter to play", ConsoleColor.Yellow, ConsoleColor.Black);
             }
-
-            MessageComponent message = current_location.GetOwner().GetComponent<MessageComponent>(); // regarde si il y a component message
-
-            if(message != null) //verifie si il possede message
+            else if(current_state is ExplorationState)
             {
-                _renderManager.Draw(0 ,5, $"[PANNEAU] : {message.GetMessage()}", ConsoleColor.Yellow, ConsoleColor.Black);
+                _renderManager.Draw(0, 0, "Game in progress...\n", ConsoleColor.Magenta, ConsoleColor.Black);
+                LocationComponent current_location = _gameManager.GetCurrentLocation();
+                _renderManager.Draw(0, 1, $"Exploring {current_location.GetLocationName()}\n", ConsoleColor.Cyan, ConsoleColor.Black);
+
+                for (int index = 0; index < current_location.GetConnectionCount(); index++)
+                {
+                    Connection connection = current_location.GetConnection(index);
+                    LocationComponent destination = connection.GetDestination();
+
+                    ConsoleColor text_color = ConsoleColor.White;
+                    ConsoleColor background_color = ConsoleColor.Black;
+                    if (index == selected_index)
+                    {
+                        background_color = ConsoleColor.DarkGreen;
+                    }
+                    _renderManager.Draw(0, 2 + index, $"{index + 1}. {destination.GetLocationName()} : Distance : {connection.GetDistance()} ", text_color, background_color);
+                }
+
+                MessageComponent message = current_location.GetOwner().GetComponent<MessageComponent>(); // regarde si il y a component message
+
+                if (message != null) //verifie si il possede message
+                {
+                    _renderManager.Draw(0, 5, $"[PANNEAU] : {message.GetMessage()}", ConsoleColor.Yellow, ConsoleColor.Black);
+                }
             }
 
             _renderManager.Render();
-
         }
 
         private float GetCurrentTime()
