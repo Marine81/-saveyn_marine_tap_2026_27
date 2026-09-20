@@ -49,7 +49,9 @@ namespace activity_00_tap_26_27.Presentation
                 last_time = loop_start_time;
             }
 
-            Console.WriteLine("Goodbye!");
+            // Console.WriteLine("Goodbye!");
+            _renderManager.Draw(0, 0, "GoodBye", ConsoleColor.Cyan, ConsoleColor.Black);
+            _renderManager.Render();
         }
 
         private void SendTranslatedKey(ConsoleKey console_key, EventManager event_manager)
@@ -79,8 +81,6 @@ namespace activity_00_tap_26_27.Presentation
 
                         break;
                     }
-
-                    
             }
             
         }
@@ -106,8 +106,24 @@ namespace activity_00_tap_26_27.Presentation
            
             if (current_state is TitleState)
             {
-                _renderManager.Draw(0, 0, "Game", ConsoleColor.Yellow, ConsoleColor.Black);
-                _renderManager.Draw(0, 1, "Enter to play", ConsoleColor.Yellow, ConsoleColor.Black);
+                _renderManager.Draw(0, 0, "Game", ConsoleColor.Blue, ConsoleColor.Black);
+
+                ConsoleColor background_color = ConsoleColor.Black;
+                if (selected_index == 0)
+                {
+                    background_color = ConsoleColor.DarkGreen; //vert si selectione                }
+                }
+
+                _renderManager.Draw(0, 1, "Enter to play", ConsoleColor.White, background_color);
+                background_color = ConsoleColor.Black;
+
+                if (selected_index == 1)
+                {
+                    background_color = ConsoleColor.DarkGreen;
+                }
+
+                _renderManager.Draw(0, 3, "Quit", ConsoleColor.White,background_color);
+
             }
             else if(current_state is ExplorationState)
             {
@@ -115,7 +131,7 @@ namespace activity_00_tap_26_27.Presentation
                 LocationComponent current_location = _gameManager.GetCurrentLocation();
                 _renderManager.Draw(0, 1, $"Exploring {current_location.GetLocationName()}\n", ConsoleColor.Cyan, ConsoleColor.Black);
 
-                for (int index = 0; index < current_location.GetConnectionCount(); index++) //fait en sorte que ca s'affiche en vert
+                for (int index = 0; index < current_location.GetConnectionCount(); index++) 
                 {
                     Connection connection = current_location.GetConnection(index);
                     LocationComponent destination = connection.GetDestination();
@@ -123,7 +139,7 @@ namespace activity_00_tap_26_27.Presentation
                     ConsoleColor text_color = ConsoleColor.White;
                     ConsoleColor background_color = ConsoleColor.Black;
 
-                    if (index == selected_index)
+                    if (index == selected_index) //fait en sorte que ca s'affiche en vert
                     {
                         background_color = ConsoleColor.DarkGreen;
                     }

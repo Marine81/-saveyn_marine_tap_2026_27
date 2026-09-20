@@ -70,8 +70,12 @@ namespace activity_00_tap_26_27.Core.States
 
                     _gameManager.SetCurrentLocation(new_location);
                     _gameManager.SetSelectionIndex(-1);
-
                 }
+            }
+
+            else if(action == GameActionType.ESCAPE)
+            {
+                _gameManager.SetShouldQuit(true);
             }
         }
 
