@@ -1,5 +1,7 @@
-﻿namespace activity_00_tap_26_27.Core.Components
+﻿using GameLibrary;
+namespace activity_00_tap_26_27.Core.Components
 {
+    
     public abstract class Component
     {
         private bool _isActive = true;

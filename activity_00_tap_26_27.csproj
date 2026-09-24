@@ -8,4 +8,14 @@
         <LangVersion>9</LangVersion>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Compile Remove="GameLibrary\**" />
+      <EmbeddedResource Remove="GameLibrary\**" />
+      <None Remove="GameLibrary\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="GameLibrary\GameLibrary.csproj" />
+    </ItemGroup>
+
 </Project>

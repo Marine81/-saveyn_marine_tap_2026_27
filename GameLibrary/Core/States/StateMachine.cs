@@ -1,4 +1,6 @@
-﻿namespace activity_00_tap_26_27.Core.States
+﻿using GameLibrary;
+
+namespace activity_00_tap_26_27.Core.States
 {
     public class StateMachine
     {
