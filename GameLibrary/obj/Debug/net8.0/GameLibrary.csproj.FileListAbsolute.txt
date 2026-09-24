@@ -1,0 +1,12 @@
+C:\Users\marin\Desktop\progra\-saveyn_marine_tap_2026_27\GameLibrary\bin\Debug\net8.0\GameLibrary.deps.json
+C:\Users\marin\Desktop\progra\-saveyn_marine_tap_2026_27\GameLibrary\bin\Debug\net8.0\GameLibrary.dll
+C:\Users\marin\Desktop\progra\-saveyn_marine_tap_2026_27\GameLibrary\bin\Debug\net8.0\GameLibrary.pdb
+C:\Users\marin\Desktop\progra\-saveyn_marine_tap_2026_27\GameLibrary\obj\Debug\net8.0\GameLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marin\Desktop\progra\-saveyn_marine_tap_2026_27\GameLibrary\obj\Debug\net8.0\GameLibrary.AssemblyInfoInputs.cache
+C:\Users\marin\Desktop\progra\-saveyn_marine_tap_2026_27\GameLibrary\obj\Debug\net8.0\GameLibrary.AssemblyInfo.cs
+C:\Users\marin\Desktop\progra\-saveyn_marine_tap_2026_27\GameLibrary\obj\Debug\net8.0\GameLibrary.csproj.CoreCompileInputs.cache
+C:\Users\marin\Desktop\progra\-saveyn_marine_tap_2026_27\GameLibrary\obj\Debug\net8.0\GameLibrary.sourcelink.json
+C:\Users\marin\Desktop\progra\-saveyn_marine_tap_2026_27\GameLibrary\obj\Debug\net8.0\GameLibrary.dll
+C:\Users\marin\Desktop\progra\-saveyn_marine_tap_2026_27\GameLibrary\obj\Debug\net8.0\refint\GameLibrary.dll
+C:\Users\marin\Desktop\progra\-saveyn_marine_tap_2026_27\GameLibrary\obj\Debug\net8.0\GameLibrary.pdb
+C:\Users\marin\Desktop\progra\-saveyn_marine_tap_2026_27\GameLibrary\obj\Debug\net8.0\ref\GameLibrary.dll
