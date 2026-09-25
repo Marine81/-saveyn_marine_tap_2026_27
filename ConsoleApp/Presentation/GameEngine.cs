@@ -9,6 +9,8 @@ namespace activity_00_tap_26_27.Presentation
 {
     public class GameEngine
     {
+        private LogFileWriter _fileWriter = new LogFileWriter("debug.log");
+
         private const float FIXED_FRAME_TIME = 20 / 1000.0f;
 
         private readonly Stopwatch _stopwatch = new Stopwatch();
@@ -22,7 +24,7 @@ namespace activity_00_tap_26_27.Presentation
 
         public void Run()
         {
-            _logManager = new LogManager(_eventManager);
+            _logManager = new LogManager(_eventManager, _fileWriter);
             _gameManager = new GameManager(_eventManager);
             _stopwatch.Start();
             float lag = 0.0f;
