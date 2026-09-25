@@ -14,7 +14,11 @@ namespace activity_00_tap_26_27.Core.States
 
         public void ChangeState(IState new_state)
         {
-            _currentState.Exit();
+            if(_currentState != null)
+            {
+                _currentState.Exit();
+            }
+            
             _currentState = new_state;
             _currentState.Enter();
         }

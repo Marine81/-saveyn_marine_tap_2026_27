@@ -14,6 +14,8 @@ namespace activity_00_tap_26_27.Core.Components
 
         private GameObject _owner; // va lier les component
 
+        private LocationComponent _parent;
+
         private string _locationName;
         private List<Connection> _destinations;
         public LocationComponent(string location_name) 
@@ -41,6 +43,8 @@ namespace activity_00_tap_26_27.Core.Components
         {
             _destinations.Add(new Connection(other_location,distance)); 
             other_location._destinations.Add(new Connection(this,distance)); //ajout du lieu liste voisin
+
+            other_location.SetParent(_parent);
         }
 
         public String GetLocationName()
@@ -66,6 +70,16 @@ namespace activity_00_tap_26_27.Core.Components
         public GameObject GetOwner()
         {
             return _owner;
+        }
+
+        public LocationComponent Getparent()
+        {
+            return _parent;
+        }
+
+        public void SetParent(LocationComponent parent)
+        {
+            _parent = parent;
         }
     }
 }

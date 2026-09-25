@@ -126,6 +126,7 @@ namespace activity_00_tap_26_27.Presentation
 
                 _renderManager.Draw(0, 3, "Quit", ConsoleColor.White,background_color);
 
+
             }
             else if(current_state is ExplorationState)
             {
@@ -154,6 +155,17 @@ namespace activity_00_tap_26_27.Presentation
                 {
                     _renderManager.Draw(0, 5, $"[PANNEAU] : {message.GetMessage()}", ConsoleColor.Yellow, ConsoleColor.Black);
                 }
+
+                if (current_location.Getparent() != null)
+                {
+                    _renderManager.Draw(0, 10, "[Escape] Quit", ConsoleColor.Cyan,ConsoleColor.Black);
+                }
+
+                else
+                {
+                    _renderManager.Draw(0, 10, "[Escape] Quit", ConsoleColor.Cyan, ConsoleColor.Black);
+                }
+                
             }
 
             _renderManager.Render();

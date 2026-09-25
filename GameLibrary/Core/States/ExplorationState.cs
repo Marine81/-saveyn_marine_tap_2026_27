@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using activity_00_tap_26_27.Core.Components;
@@ -12,6 +13,7 @@ namespace activity_00_tap_26_27.Core.States
     public class ExplorationState : IState
     {
         public GameManager _gameManager;
+        private StateMachine _stateMachine = new StateMachine();
 
         public ExplorationState(GameManager game_manager)
         {
@@ -76,7 +78,22 @@ namespace activity_00_tap_26_27.Core.States
 
             else if(action == GameActionType.ESCAPE)
             {
-                _gameManager.SetShouldQuit(true);
+                LocationComponent current_location = _gameManager.GetCurrentLocation();//recupere le lieu actuel
+
+                LocationComponent parent_location = current_location.Getparent();//verifie si y a parent
+
+                if(parent_location != null)
+                {
+                    _gameManager.SetCurrentLocation(parent_location);
+                    _gameManager.SetSelectionIndex(-1);
+                }
+
+                else
+                {
+                    _stateMachine.ChangeState(new TitleState(_gameManager));
+                }
+
+
             }
         }
 

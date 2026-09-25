@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\marin\\Desktop\\progra\\-saveyn_marine_tap_2026_27\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A423A0B6-A32C-472F-BE96-2A9B6A33292E}|GameLibrary\\GameLibrary.csproj|c:\\users\\marin\\desktop\\progra\\-saveyn_marine_tap_2026_27\\gamelibrary\\core\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A423A0B6-A32C-472F-BE96-2A9B6A33292E}|GameLibrary\\GameLibrary.csproj|solutionrelative:gamelibrary\\core\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0246C6CA-D218-692B-01C6-C0B599803BFC}|ConsoleApp\\activity_00_tap_26_27.csproj|c:\\users\\marin\\desktop\\progra\\-saveyn_marine_tap_2026_27\\consoleapp\\presentation\\gameengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0246C6CA-D218-692B-01C6-C0B599803BFC}|ConsoleApp\\activity_00_tap_26_27.csproj|solutionrelative:consoleapp\\presentation\\gameengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D1FC2A4-4BDA-4C4F-B287-6D3D5D913AA1}|GameLibraryTests\\GameLibraryTests.csproj|c:\\users\\marin\\desktop\\progra\\-saveyn_marine_tap_2026_27\\gamelibrarytests\\connectiontests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D1FC2A4-4BDA-4C4F-B287-6D3D5D913AA1}|GameLibraryTests\\GameLibraryTests.csproj|solutionrelative:gamelibrarytests\\connectiontests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A423A0B6-A32C-472F-BE96-2A9B6A33292E}|GameLibrary\\GameLibrary.csproj|c:\\users\\marin\\desktop\\progra\\-saveyn_marine_tap_2026_27\\gamelibrary\\core\\states\\explorationstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A423A0B6-A32C-472F-BE96-2A9B6A33292E}|GameLibrary\\GameLibrary.csproj|solutionrelative:gamelibrary\\core\\states\\explorationstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A423A0B6-A32C-472F-BE96-2A9B6A33292E}|GameLibrary\\GameLibrary.csproj|c:\\users\\marin\\desktop\\progra\\-saveyn_marine_tap_2026_27\\gamelibrary\\core\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A423A0B6-A32C-472F-BE96-2A9B6A33292E}|GameLibrary\\GameLibrary.csproj|solutionrelative:gamelibrary\\core\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A423A0B6-A32C-472F-BE96-2A9B6A33292E}|GameLibrary\\GameLibrary.csproj|c:\\users\\marin\\desktop\\progra\\-saveyn_marine_tap_2026_27\\gamelibrary\\core\\components\\locationcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A423A0B6-A32C-472F-BE96-2A9B6A33292E}|GameLibrary\\GameLibrary.csproj|solutionrelative:gamelibrary\\core\\components\\locationcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A423A0B6-A32C-472F-BE96-2A9B6A33292E}|GameLibrary\\GameLibrary.csproj|c:\\users\\marin\\desktop\\progra\\-saveyn_marine_tap_2026_27\\gamelibrary\\core\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A423A0B6-A32C-472F-BE96-2A9B6A33292E}|GameLibrary\\GameLibrary.csproj|solutionrelative:gamelibrary\\core\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A423A0B6-A32C-472F-BE96-2A9B6A33292E}|GameLibrary\\GameLibrary.csproj|c:\\users\\marin\\desktop\\progra\\-saveyn_marine_tap_2026_27\\gamelibrary\\core\\states\\statemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A423A0B6-A32C-472F-BE96-2A9B6A33292E}|GameLibrary\\GameLibrary.csproj|solutionrelative:gamelibrary\\core\\states\\statemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "StateMachine.cs",
+              "DocumentMoniker": "C:\\Users\\marin\\Desktop\\progra\\-saveyn_marine_tap_2026_27\\GameLibrary\\Core\\States\\StateMachine.cs",
+              "RelativeDocumentMoniker": "GameLibrary\\Core\\States\\StateMachine.cs",
+              "ToolTip": "C:\\Users\\marin\\Desktop\\progra\\-saveyn_marine_tap_2026_27\\GameLibrary\\Core\\States\\StateMachine.cs",
+              "RelativeToolTip": "GameLibrary\\Core\\States\\StateMachine.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-25T10:33:50.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LocationComponent.cs",
+              "DocumentMoniker": "C:\\Users\\marin\\Desktop\\progra\\-saveyn_marine_tap_2026_27\\GameLibrary\\Core\\Components\\LocationComponent.cs",
+              "RelativeDocumentMoniker": "GameLibrary\\Core\\Components\\LocationComponent.cs",
+              "ToolTip": "C:\\Users\\marin\\Desktop\\progra\\-saveyn_marine_tap_2026_27\\GameLibrary\\Core\\Components\\LocationComponent.cs",
+              "RelativeToolTip": "GameLibrary\\Core\\Components\\LocationComponent.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwC4AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-25T10:28:32.742Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ExplorationState.cs",
+              "DocumentMoniker": "C:\\Users\\marin\\Desktop\\progra\\-saveyn_marine_tap_2026_27\\GameLibrary\\Core\\States\\ExplorationState.cs",
+              "RelativeDocumentMoniker": "GameLibrary\\Core\\States\\ExplorationState.cs",
+              "ToolTip": "C:\\Users\\marin\\Desktop\\progra\\-saveyn_marine_tap_2026_27\\GameLibrary\\Core\\States\\ExplorationState.cs",
+              "RelativeToolTip": "GameLibrary\\Core\\States\\ExplorationState.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAowFwAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-25T10:18:26.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "GameEngine.cs",
               "DocumentMoniker": "C:\\Users\\marin\\Desktop\\progra\\-saveyn_marine_tap_2026_27\\ConsoleApp\\Presentation\\GameEngine.cs",
               "RelativeDocumentMoniker": "ConsoleApp\\Presentation\\GameEngine.cs",
               "ToolTip": "C:\\Users\\marin\\Desktop\\progra\\-saveyn_marine_tap_2026_27\\ConsoleApp\\Presentation\\GameEngine.cs",
               "RelativeToolTip": "ConsoleApp\\Presentation\\GameEngine.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAcwAsAAABIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-25T10:06:56.483Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Connection.cs",
-              "DocumentMoniker": "C:\\Users\\marin\\Desktop\\progra\\-saveyn_marine_tap_2026_27\\GameLibrary\\Core\\Connection.cs",
-              "RelativeDocumentMoniker": "GameLibrary\\Core\\Connection.cs",
-              "ToolTip": "C:\\Users\\marin\\Desktop\\progra\\-saveyn_marine_tap_2026_27\\GameLibrary\\Core\\Connection.cs",
-              "RelativeToolTip": "GameLibrary\\Core\\Connection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-25T09:59:52.03Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\marin\\Desktop\\progra\\-saveyn_marine_tap_2026_27\\GameLibrary\\Core\\GameManager.cs",
               "RelativeDocumentMoniker": "GameLibrary\\Core\\GameManager.cs",
               "ToolTip": "C:\\Users\\marin\\Desktop\\progra\\-saveyn_marine_tap_2026_27\\GameLibrary\\Core\\GameManager.cs",
               "RelativeToolTip": "GameLibrary\\Core\\GameManager.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAArwCsAAABTAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAArwFgAAABfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-25T09:11:06.461Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ConnectionTests.cs",
-              "DocumentMoniker": "C:\\Users\\marin\\Desktop\\progra\\-saveyn_marine_tap_2026_27\\GameLibraryTests\\ConnectionTests.cs",
-              "RelativeDocumentMoniker": "GameLibraryTests\\ConnectionTests.cs",
-              "ToolTip": "C:\\Users\\marin\\Desktop\\progra\\-saveyn_marine_tap_2026_27\\GameLibraryTests\\ConnectionTests.cs",
-              "RelativeToolTip": "GameLibraryTests\\ConnectionTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAABTAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-25T09:10:03.986Z",
               "EditorCaption": ""
             }
           ]
