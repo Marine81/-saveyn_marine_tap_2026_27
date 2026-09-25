@@ -1,7 +1,8 @@
+using activity_00_tap_26_27.Core.Components;
 using GameLibrary;
 namespace GameLibraryTests
 {
-    public class Test
+    public class Connectiontest
     {
         [SetUp]
         public void Setup()
@@ -9,9 +10,10 @@ namespace GameLibraryTests
         }
 
         [Test]
-        public void Test1()
+        public void GetDestination_ReturnsConstructionDestination()
         {
-            Assert.Pass();
+           // LocationComponent destination = CreateLocation("Daisy Town");
+           // creer createLocation
         }
     }
 }

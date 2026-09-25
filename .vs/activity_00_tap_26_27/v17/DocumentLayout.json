@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\marin\\Desktop\\progra\\-saveyn_marine_tap_2026_27\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7D1FC2A4-4BDA-4C4F-B287-6D3D5D913AA1}|GameLibraryTests\\GameLibraryTests.csproj|c:\\users\\marin\\desktop\\progra\\-saveyn_marine_tap_2026_27\\gamelibrarytests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D1FC2A4-4BDA-4C4F-B287-6D3D5D913AA1}|GameLibraryTests\\GameLibraryTests.csproj|solutionrelative:gamelibrarytests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7D1FC2A4-4BDA-4C4F-B287-6D3D5D913AA1}|GameLibraryTests\\GameLibraryTests.csproj|c:\\users\\marin\\desktop\\progra\\-saveyn_marine_tap_2026_27\\gamelibrarytests\\logmanagertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D1FC2A4-4BDA-4C4F-B287-6D3D5D913AA1}|GameLibraryTests\\GameLibraryTests.csproj|solutionrelative:gamelibrarytests\\logmanagertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0246C6CA-D218-692B-01C6-C0B599803BFC}|ConsoleApp\\activity_00_tap_26_27.csproj|c:\\users\\marin\\desktop\\progra\\-saveyn_marine_tap_2026_27\\consoleapp\\activity_00_tap_26_27.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{0246C6CA-D218-692B-01C6-C0B599803BFC}|ConsoleApp\\activity_00_tap_26_27.csproj|solutionrelative:consoleapp\\activity_00_tap_26_27.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{0246C6CA-D218-692B-01C6-C0B599803BFC}|ConsoleApp\\activity_00_tap_26_27.csproj|c:\\users\\marin\\desktop\\progra\\-saveyn_marine_tap_2026_27\\consoleapp\\logfilewriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0246C6CA-D218-692B-01C6-C0B599803BFC}|ConsoleApp\\activity_00_tap_26_27.csproj|solutionrelative:consoleapp\\logfilewriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A423A0B6-A32C-472F-BE96-2A9B6A33292E}|GameLibrary\\GameLibrary.csproj|c:\\users\\marin\\desktop\\progra\\-saveyn_marine_tap_2026_27\\gamelibrary\\core\\events\\logmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A423A0B6-A32C-472F-BE96-2A9B6A33292E}|GameLibrary\\GameLibrary.csproj|solutionrelative:gamelibrary\\core\\events\\logmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A423A0B6-A32C-472F-BE96-2A9B6A33292E}|GameLibrary\\GameLibrary.csproj|c:\\users\\marin\\desktop\\progra\\-saveyn_marine_tap_2026_27\\gamelibrary\\core\\ilogwriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A423A0B6-A32C-472F-BE96-2A9B6A33292E}|GameLibrary\\GameLibrary.csproj|solutionrelative:gamelibrary\\core\\ilogwriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UnitTest1.cs",
-              "DocumentMoniker": "C:\\Users\\marin\\Desktop\\progra\\-saveyn_marine_tap_2026_27\\GameLibraryTests\\UnitTest1.cs",
-              "RelativeDocumentMoniker": "GameLibraryTests\\UnitTest1.cs",
-              "ToolTip": "C:\\Users\\marin\\Desktop\\progra\\-saveyn_marine_tap_2026_27\\GameLibraryTests\\UnitTest1.cs",
-              "RelativeToolTip": "GameLibraryTests\\UnitTest1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAVAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "ILogWriter.cs",
+              "DocumentMoniker": "C:\\Users\\marin\\Desktop\\progra\\-saveyn_marine_tap_2026_27\\GameLibrary\\Core\\ILogWriter.cs",
+              "RelativeDocumentMoniker": "GameLibrary\\Core\\ILogWriter.cs",
+              "ToolTip": "C:\\Users\\marin\\Desktop\\progra\\-saveyn_marine_tap_2026_27\\GameLibrary\\Core\\ILogWriter.cs",
+              "RelativeToolTip": "GameLibrary\\Core\\ILogWriter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-24T08:34:13.167Z",
+              "WhenOpened": "2026-09-25T07:55:51.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LogManager.cs",
+              "DocumentMoniker": "C:\\Users\\marin\\Desktop\\progra\\-saveyn_marine_tap_2026_27\\GameLibrary\\Core\\Events\\LogManager.cs",
+              "RelativeDocumentMoniker": "GameLibrary\\Core\\Events\\LogManager.cs",
+              "ToolTip": "C:\\Users\\marin\\Desktop\\progra\\-saveyn_marine_tap_2026_27\\GameLibrary\\Core\\Events\\LogManager.cs",
+              "RelativeToolTip": "GameLibrary\\Core\\Events\\LogManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-24T10:03:37.458Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LogManagerTests.cs",
+              "DocumentMoniker": "C:\\Users\\marin\\Desktop\\progra\\-saveyn_marine_tap_2026_27\\GameLibraryTests\\LogManagerTests.cs",
+              "RelativeDocumentMoniker": "GameLibraryTests\\LogManagerTests.cs",
+              "ToolTip": "C:\\Users\\marin\\Desktop\\progra\\-saveyn_marine_tap_2026_27\\GameLibraryTests\\LogManagerTests.cs",
+              "RelativeToolTip": "GameLibraryTests\\LogManagerTests.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAgwDsAAABdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-24T10:01:22.988Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "activity_00_tap_26_27",
-              "DocumentMoniker": "C:\\Users\\marin\\Desktop\\progra\\-saveyn_marine_tap_2026_27\\ConsoleApp\\activity_00_tap_26_27.csproj",
-              "RelativeDocumentMoniker": "ConsoleApp\\activity_00_tap_26_27.csproj",
-              "ToolTip": "C:\\Users\\marin\\Desktop\\progra\\-saveyn_marine_tap_2026_27\\ConsoleApp\\activity_00_tap_26_27.csproj",
-              "RelativeToolTip": "ConsoleApp\\activity_00_tap_26_27.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-09-24T08:07:43.301Z",
+              "Title": "LogFileWriter.cs",
+              "DocumentMoniker": "C:\\Users\\marin\\Desktop\\progra\\-saveyn_marine_tap_2026_27\\ConsoleApp\\LogFileWriter.cs",
+              "RelativeDocumentMoniker": "ConsoleApp\\LogFileWriter.cs",
+              "ToolTip": "C:\\Users\\marin\\Desktop\\progra\\-saveyn_marine_tap_2026_27\\ConsoleApp\\LogFileWriter.cs",
+              "RelativeToolTip": "ConsoleApp\\LogFileWriter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-24T10:02:36.608Z",
               "EditorCaption": ""
             }
           ]
